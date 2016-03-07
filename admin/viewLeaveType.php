@@ -1,5 +1,5 @@
 <div class="row">
-	<a class="btn-floating btn-large waves-effect waves-light red right tooltipped" data-position="right" data-delay="50" data-tooltip="Add new leve type" href="index.php?id=addLeaveType"><i class="material-icons">add</i></a>
+	<a class="btn-floating btn-large waves-effect waves-light red right tooltipped" data-position="right" data-delay="50" data-tooltip="Add new leave type" href="index.php?id=addLeaveType"><i class="material-icons">add</i></a>
 </div>
 <div class="row">
 	<table class="highlight bordered responsive-table hoverable">
