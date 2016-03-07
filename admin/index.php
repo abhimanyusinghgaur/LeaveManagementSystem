@@ -84,6 +84,8 @@ if(userIsLoggedIn()) {
 					include 'addLeaveType.php';
 				else if($_GET['id']=='viewLeaveType')
 					include 'viewLeaveType.php';
+				else if($_GET['id']=='userTypes')
+					include 'addUserType.php';
 				else
 					include 'viewLeaveRequests.php';
 			} else {
