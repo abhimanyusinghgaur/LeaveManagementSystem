@@ -46,7 +46,7 @@ if(userIsLoggedIn()) {
 			if(adminIsLoggedIn()) {
 			?>
 				<li><a href="?id=leaveRequests">Leave Requests</a></li>
-				<li><a href="?id=userTypes">User Types</a></li>
+				<li><a href="?id=viewUserType">User Types</a></li>
 				<li><a href="?id=viewLeaveType">Leave Types</a></li>
 				<li><a href="?id=users">Users</a></li>
 			<?php
@@ -84,7 +84,9 @@ if(userIsLoggedIn()) {
 					include 'addLeaveType.php';
 				else if($_GET['id']=='viewLeaveType')
 					include 'viewLeaveType.php';
-				else if($_GET['id']=='userTypes')
+				else if($_GET['id']=='viewUserType')
+					include 'viewUserType.php';
+				else if($_GET['id']=='addUserType')
 					include 'addUserType.php';
 				else
 					include 'viewLeaveRequests.php';

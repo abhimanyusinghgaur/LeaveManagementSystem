@@ -28,6 +28,29 @@ class DatabaseUserType
 		mysql_close($connect);
 		return false;
 	}
+	public function getUserTypes() {
+		require_once '../core.php';
+		require_once 'classUserType.php';
+		$connect=connectDatabase();
+		$query="SELECT * FROM `".$this->table."`";
+		if($query_run=mysql_query($query)) {
+			$objUserTypeArray=array();
+			$query_num_rows=mysql_num_rows($query_run);
+			for($i=0;$i<$query_num_rows;$i++) {
+				$objUserType=new UserType;
+				$row=mysql_fetch_row($query_run);
+				$objUserType->setType($row[1]);
+				$objUserType->setAccessibleLeaves($row[2]);
+				array_push($objUserTypeArray, $objUserType);
+			}
+			mysql_close($connect);
+			return $objUserTypeArray;
+		} else {
+			setError(mysql_error());
+		}
+		mysql_close($connect);
+		return false;
+	}
 }
 
 ?>
