@@ -88,6 +88,8 @@ if(userIsLoggedIn()) {
 					include 'viewUserType.php';
 				else if($_GET['id']=='addUserType')
 					include 'addUserType.php';
+				else if($_GET['id']=='users')
+					include 'viewUser.php';
 				else
 					include 'viewLeaveRequests.php';
 			} else {

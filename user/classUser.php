@@ -43,7 +43,7 @@ class User
 	public function setPassword($Password)
 	{
 		if(!empty($Password)) {
-			$this->Passwords=htmlentities($Password);
+			$this->Password=htmlentities($Password);
 		}
 	}
 
@@ -54,7 +54,7 @@ class User
 	public function setGender($Gender)
 	{
 		if(!empty($Gender)) {
-			$this->Genders=htmlentities($Gender);
+			$this->Gender=htmlentities($Gender);
 		}
 	}
 	public function getType()
@@ -64,7 +64,7 @@ class User
 	public function setType($Type)
 	{
 		if(!empty($Type)) {
-			$this->Types=htmlentities($Type);
+			$this->Type=htmlentities($Type);
 		}
 	}
 

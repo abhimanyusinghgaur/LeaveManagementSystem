@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2016 at 09:31 PM
+-- Generation Time: Mar 07, 2016 at 11:23 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -65,6 +65,30 @@ INSERT INTO `leavetypes` (`id`, `leaveName`, `abbreviation`, `numLeaves`, `inclu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(40) NOT NULL,
+  `User_id` varchar(30) NOT NULL,
+  `Email` varchar(30) NOT NULL,
+  `Password` varchar(30) NOT NULL,
+  `Gender` varchar(15) NOT NULL,
+  `Type` varchar(30) NOT NULL,
+  `Casual_Leave_left` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `Name`, `User_id`, `Email`, `Password`, `Gender`, `Type`, `Casual_Leave_left`) VALUES
+(1, 'Ashish Sahu', 'B14CS009', 'sahu.2@iitj.ac.in', '1234', 'male', 'B.tech', 15);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `usertypes`
 --
 
@@ -99,6 +123,12 @@ ALTER TABLE `leavetypes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `usertypes`
 --
 ALTER TABLE `usertypes`
@@ -118,6 +148,11 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `leavetypes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `usertypes`
 --

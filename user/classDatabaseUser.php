@@ -7,7 +7,7 @@ class DatabaseUser
 {
 	private $table;
 	public function __construct() {
-		$this->table="user";
+		$this->table="users";
 	}
 	public function add($objUser) {
 		require_once '../core.php';
