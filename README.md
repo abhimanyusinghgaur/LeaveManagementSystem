@@ -37,3 +37,9 @@ Project done under Software Engineering course at IIT Jodhpur
 6. Then create some users.
 7. Default password for the newly created user will be his Username.
 8. Open **http://localhost/LeaveManagementSystem/** to log in as a user.
+
+## Contributors
+- Abhimanyu Singh Gaur @abhimanyusinghgaur
+- Ashish Sahu @pikachu97
+- Ajeet Ujjwal @ajeet-ujjwal
+- Daval Pargal @davalpargal
