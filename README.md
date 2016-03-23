@@ -39,7 +39,7 @@ Project done under Software Engineering course at IIT Jodhpur
 8. Open **http://localhost/LeaveManagementSystem/** to log in as a user.
 
 ## Contributors
-- Abhimanyu Singh Gaur @abhimanyusinghgaur
-- Ashish Sahu @pikachu97
-- Ajeet Ujjwal @ajeet-ujjwal
-- Daval Pargal @davalpargal
+- [Abhimanyu Singh Gaur] (https://github.com/abhimanyusinghgaur)
+- [Ashish Sahu] (https://github.com/pikachu97)
+- [Ajeet Ujjwal] (https://github.com/ajeet-ujjwal)
+- [Daval Pargal] (https://github.com/davalpargal)
