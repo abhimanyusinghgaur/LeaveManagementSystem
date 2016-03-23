@@ -1,2 +1,2 @@
 # LeaveManagementSystem
-Project done for the course of Software Engineering at IIT Jodhpur
+Project done under Software Engineering course at IIT Jodhpur
