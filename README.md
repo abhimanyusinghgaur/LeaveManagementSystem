@@ -9,8 +9,10 @@ Project done under Software Engineering course at IIT Jodhpur
   2. Install XAMPP using the downloaded setup.
 
 - Cloning the repository
-  1. Create a folder named LeaveManagementSystem **inside htdocs folder** in XAMPP installation directory.
-  2. Clone this repo to this folder.
+  1. Open Terminal (or PowerShell in Windows).
+  2. Change your working directory to **htdocs** diretory inside XAMPP installtion directory.
+  3. Clone this repository in htdocs with following command:  
+     `git clone https://github.com/abhimanyusinghgaur/LeaveManagementSystem.git`
 
 - Creating Database in XAMPP
   1. Open **http://localhost/phpmyadmin** in your web-browser.
@@ -43,3 +45,6 @@ Project done under Software Engineering course at IIT Jodhpur
 - [Ashish Sahu] (https://github.com/pikachu97)
 - [Ajeet Ujjwal] (https://github.com/ajeet-ujjwal)
 - [Daval Pargal] (https://github.com/davalpargal)
+
+## Mentor
+- Shreya Goyal
