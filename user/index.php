@@ -36,6 +36,9 @@ if(adminIsLoggedIn()) {
 			}
 		}
 	</style>
+
+	<!--  Scripts-->
+	<script src="../js/jquery.js"></script>
 </head>
 <body>
 
@@ -47,7 +50,7 @@ if(adminIsLoggedIn()) {
 			?>
 				<li><a href="?id=profile">Profile</a></li>
 				<li><a href="?id=newLeave">New Leave</a></li>
-				<li><a href="?id=leaveHistory">Leave History</a></li>
+				<li><a href="?id=viewLeaveHistory">Leave History</a></li>
 			<?php
 			}
 			?>
@@ -79,10 +82,10 @@ if(adminIsLoggedIn()) {
 			if(userIsLoggedIn()) {
 				if(!isset($_GET['id']))
 					include 'newLeave.php';
-				else if($_GET['id']=='profile')
-					include 'profile.php';
-				else if($_GET['id']=='leaveHistory')
-					include 'leaveHistory.php';
+				/*else if($_GET['id']=='profile')
+					include 'profile.php';*/
+				else if($_GET['id']=='viewLeaveHistory')
+					include 'viewLeaveHistory.php';
 				else
 					include 'newLeave.php';
 			} else {
@@ -101,7 +104,6 @@ if(adminIsLoggedIn()) {
 	</main>
 
 	<!--  Scripts-->
-	<script src="../js/jquery.js"></script>
 	<script src="../js/materialize.js"></script>
 	<script src="../js/init.js"></script>
 

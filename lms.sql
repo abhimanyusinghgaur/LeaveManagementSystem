@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `leavetypes` (
   `leaveName` varchar(30) NOT NULL,
   `abbreviation` varchar(5) NOT NULL,
   `numLeaves` smallint(6) NOT NULL,
-  `inclusions` set('monday','tuesday','wednesday','thursday','friday','saturday','sunday','holidays') NOT NULL
+  `inclusions` set('Mon','Tue','Wed','Thu','Fri','Sat','Sun','Holidays') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

@@ -6,7 +6,7 @@
 class User
 {
 	private $Name;
-	private $Id;
+	private $Username;
 	private $Email;
 	private $Password;
 	private $Gender;
@@ -20,13 +20,13 @@ class User
 	{
 		$this->Name=htmlentities($Name);
 	}
-	public function getId()
+	public function getUsername()
 	{
-		return $this->Id;
+		return $this->Username;
 	}
-	public function setId($Id)
+	public function setUsername($Username)
 	{
-		$this->Id=htmlentities($Id);
+		$this->Username=htmlentities($Username);
 	}
 	public function getEmail()
 	{
@@ -76,6 +76,15 @@ class User
 	{
 		if(!empty($LeavesLeft)) {
 			$this->LeavesLeft=htmlentities($LeavesLeft);
+		}
+	}
+	public function addLeavesLeft($LeavesLeft)
+	{
+		if(!empty($LeavesLeft)) {
+			if(isset($this->LeavesLeft) && !empty($this->LeavesLeft))
+				$this->LeavesLeft.=','.htmlentities($LeavesLeft);
+			else
+				$this->LeavesLeft=htmlentities($LeavesLeft);
 		}
 	}
 }

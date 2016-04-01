@@ -6,9 +6,11 @@
 class DatabaseLeaveType
 {
 	private $table;
+	
 	public function __construct() {
 		$this->table="leavetypes";
 	}
+	
 	public function add($objLeaveType) {
 		require_once '../core.php';
 		$connect=connectDatabase();
@@ -31,12 +33,11 @@ class DatabaseLeaveType
 				if(empty($objLeaveType->getInclusions()))
 					setError('At least one Inclusion is required');
 			}
-		}/* else {
-			setError(is_object($objLeaveType).'<br>class:'.get_class($objLeaveType));
-		}*/
+		}
 		mysql_close($connect);
 		return false;
 	}
+
 	public function getLeaveTypes() {
 		require_once '../core.php';
 		require_once 'classLeaveType.php';
@@ -56,6 +57,27 @@ class DatabaseLeaveType
 			}
 			mysql_close($connect);
 			return $objLeaveTypeArray;
+		} else {
+			setError(mysql_error());
+		}
+		mysql_close($connect);
+		return false;
+	}
+
+	public function getLeaveTypeWithLeaveName($LeaveName) {
+		require_once '../core.php';
+		require_once 'classLeaveType.php';
+		$connect=connectDatabase();
+		$query="SELECT * FROM `".$this->table."` WHERE `leaveName`='".$LeaveName."'";
+		if($query_run=mysql_query($query)) {
+			$objLeaveType=new LeaveType;
+			$row=mysql_fetch_row($query_run);
+			$objLeaveType->setLeaveName($row[1]);
+			$objLeaveType->setAbbreviation($row[2]);
+			$objLeaveType->setNumLeaves($row[3]);
+			$objLeaveType->setInclusions($row[4]);
+			mysql_close($connect);
+			return $objLeaveType;
 		} else {
 			setError(mysql_error());
 		}

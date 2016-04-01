@@ -18,6 +18,13 @@ if(isset($_POST['leaveName']) && isset($_POST['abbreviation']) && isset($_POST['
 	else											//else, there was an error
 		header('Location: index.php?id=addLeaveType');	//so, stay on same page to show error
 	exit();
+} else {
+	if(!isset($_POST['check_list'])) {
+		require_once  '../core.php';
+		setError('At least one Inclusion is required');
+		header('Location: index.php?id=addLeaveType');
+		exit();
+	}
 }
 
 header('Location: index.php');

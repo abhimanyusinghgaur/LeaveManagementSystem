@@ -18,21 +18,21 @@
 	<div class="row">
 		<div class="col s12 m8 offset-m2">
 			<label>Inclusions:</label><br>
-			<input type="checkbox" class="" name="check_list[]" id="monday" value="monday" checked>
+			<input type="checkbox" class="" name="check_list[]" id="monday" value="Mon" checked>
 				<label for="monday">Monday</label>
-			<input type="checkbox" class="" name="check_list[]" id="tuesday" value="tuesday" checked>
+			<input type="checkbox" class="" name="check_list[]" id="tuesday" value="Tue" checked>
 				<label for="tuesday">Tuesday</label>
-			<input type="checkbox" class="" name="check_list[]" id="wednesday" value="wednesday" checked>
+			<input type="checkbox" class="" name="check_list[]" id="wednesday" value="Wed" checked>
 				<label for="wednesday">Wednesday</label>
-			<input type="checkbox" class="" name="check_list[]" id="thursday" value="thursday" checked>
+			<input type="checkbox" class="" name="check_list[]" id="thursday" value="Thu" checked>
 				<label for="thursday">Thursday</label>
-			<input type="checkbox" class="" name="check_list[]" id="friday" value="friday" checked>
+			<input type="checkbox" class="" name="check_list[]" id="friday" value="Fri" checked>
 				<label for="friday">Friday</label>
-			<input type="checkbox" class="" name="check_list[]" id="saturday" value="saturday">
+			<input type="checkbox" class="" name="check_list[]" id="saturday" value="Sat">
 				<label for="saturday">Saturday</label>
-			<input type="checkbox" class="" name="check_list[]" id="sunday" value="sunday">
+			<input type="checkbox" class="" name="check_list[]" id="sunday" value="Sun">
 				<label for="sunday">Sunday</label>
-			<input type="checkbox" class="" name="check_list[]" id="holidays" value="holidays">
+			<input type="checkbox" class="" name="check_list[]" id="holidays" value="Holidays">
 				<label for="holidays">Holidays</label>
 		</div>
     </div>

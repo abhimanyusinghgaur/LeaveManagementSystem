@@ -7,12 +7,11 @@
 		  <tr>
 		      <th data-field="id">S.No.</th>
 		      <th data-field="name">Name</th>
-		      <th data-field="user_Id">User_Id</th>
+		      <th data-field="user_Id">Username</th>
 		      <th data-field="email">Email</th>
-		      <th data-field="pass">Password</th>
 		      <th data-field="Gen">Gender</th>
 		      <th data-field="Type">Type</th>
-		      <th data-field="cl_left">Casual Leaves Left</th>
+		      <th data-field="cl_left">Leaves Left</th>
 		  </tr>
 		</thead>
 
@@ -30,9 +29,8 @@
 				echo '<tr>'.
 						'<td>'.$i.'</td>'.
 						'<td>'.$objUser->getName().'</td>'.
-						'<td>'.$objUser->getId().'</td>'.
+						'<td>'.$objUser->getUsername().'</td>'.
 						'<td>'.$objUser->getEmail().'</td>'.
-						'<td>'.$objUser->getPassword().'</td>'.
 						'<td>'.$objUser->getGender().'</td>'.
 						'<td>'.$objUser->getType().'</td>'.
 						'<td>'.$objUser->getLeavesLeft().'</td>'.
@@ -40,7 +38,7 @@
 				$i++;
 			}
 		} else {
-			setError('No Leave Type has been created yet.');
+			setError('No User has been created yet.');
 			setError('Create one by clicking on the add button above.');
 		}
 

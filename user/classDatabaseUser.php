@@ -6,15 +6,18 @@
 class DatabaseUser
 {
 	private $table;
+	private $queryParameters;
 	public function __construct() {
 		$this->table="users";
+		$this->queryParameters = "";
 	}
+
 	public function add($objUser) {
 		require_once '../core.php';
 		$connect=connectDatabase();
 		if(is_object($objUser) && get_class($objUser)=="User") {
-			if(!empty($objUser->getName()) && !empty($objUser->getId()) && !empty($objUser->getEmail()) && !empty($objUser->getPassword()) && !empty($objUser->getGender()) && !empty($objUser->getType()) && !empty($objUser->getLeavesLeft())) {
-				$query="INSERT INTO `".$this->table."` VALUES ('','".$objUser->getName()."','".$objUser->getId()."','".$objUser->getEmail()."','".$objUser->getPassword()."','".$objUser->getGender()."','".$objUser->getType()."','".$objUser->getLeavesLeft()."')";
+			if(!empty($objUser->getName()) && !empty($objUser->getUsername()) && !empty($objUser->getEmail()) && !empty($objUser->getPassword()) && !empty($objUser->getGender()) && !empty($objUser->getType()) && !empty($objUser->getLeavesLeft())) {
+				$query="INSERT INTO `".$this->table."` VALUES ('','".$objUser->getName()."','".$objUser->getUsername()."','".$objUser->getEmail()."','".$objUser->getPassword()."','".$objUser->getGender()."','".$objUser->getType()."','".$objUser->getLeavesLeft()."')";
 				if($query_run=mysql_query($query)) {
 					mysql_close($connect);
 					return true;
@@ -24,7 +27,7 @@ class DatabaseUser
 			} else {
 				if(empty($objUser->getName()))
 					setError('User Name is required');
-				if(empty($objUser->getId()))
+				if(empty($objUser->getUsername()))
 					setError('Id is required');
 				if(empty($objUser->getEmail()))
 					setError('Email is required');
@@ -47,7 +50,7 @@ class DatabaseUser
 		require_once '../core.php';
 		require_once 'classUser.php';
 		$connect=connectDatabase();
-		$query="SELECT * FROM `".$this->table."`";
+		$query="SELECT * FROM `".$this->table."` ".$this->queryParameters;
 		if($query_run=mysql_query($query)) {
 			$objUserArray=array();
 			$query_num_rows=mysql_num_rows($query_run);
@@ -55,7 +58,7 @@ class DatabaseUser
 				$objUser=new User;
 				$row=mysql_fetch_row($query_run);
 				$objUser->setName($row[1]);
-				$objUser->setId($row[2]);
+				$objUser->setUsername($row[2]);
 				$objUser->setEmail($row[3]);
 				$objUser->setPassword($row[4]);
 				$objUser->setGender($row[5]);
@@ -67,6 +70,31 @@ class DatabaseUser
 			return $objUserArray;
 		} else {
 			setError(mysql_error());
+		}
+		mysql_close($connect);
+		return false;
+	}
+
+	public function getUsersWithUsername($Username) {
+		if(!empty($Username) && is_string($Username)) {
+			$this->queryParameters="WHERE `Username`='".$Username."'";
+			return $this->getUsers();
+		}
+	}
+
+	public function modifyLeavesLeft($Username, $LeavesLeft) {
+		require_once '../core.php';
+		$connect=connectDatabase();
+		if(!empty($Username) && !empty($LeavesLeft)) {
+			$query="UPDATE `".$this->table."` SET `Leaves_Left`='".$LeavesLeft."' WHERE `Username`='".$Username."'";
+			if($query_run=mysql_query($query)) {
+				mysql_close($connect);
+				return true;
+			} else {
+				setError(mysql_error());
+			}
+		} else {
+			setError('Improper request to modify LeavesLeft.');
 		}
 		mysql_close($connect);
 		return false;

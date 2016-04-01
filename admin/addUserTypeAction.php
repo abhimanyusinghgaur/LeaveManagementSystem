@@ -16,6 +16,13 @@ if(isset($_POST['UserType']) && isset($_POST['check_list'])) {
 	else											//else, there was an error
 		header('Location: index.php?id=addUserType');	//so, stay on same page to show error
 	exit();
+} else {
+	if(!isset($_POST['check_list'])) {
+		require_once  '../core.php';
+		setError('At least one Leave Type should be accesible.');
+		header('Location: index.php?id=addUserType');
+		exit();
+	}
 }
 
 header('Location: index.php');

@@ -7,8 +7,8 @@
 	</div>
 	<div class="row">
 		<div class="input-field col s12 m4 offset-m2">
-			<label for="Id">Id</label>
-			<input type="text" name="Id" id="Id" required>
+			<label for="Username">Username</label>
+			<input type="text" name="Username" id="Username" required>
 		</div>
 		<div class="input-field col s12 m4">
 			<label for="Email">Email</label>
@@ -18,23 +18,24 @@
 
 	<div class="row">
 		<div class="input-field col s12 m4 offset-m2">
-			<label for="Password">Password</label>
-			<input type="password" name="Password" Password="Password" required>
+			<label>Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" class="with-gap" name="Gender" id="male" value="male" checked>
+			<label for="male">Male</label>
+            <input type="radio" class="with-gap" name="Gender" id="female" value="female">
+			<label for="female">Female</label>
 		</div>
 		<div class="input-field col s12 m4">
-			 <input type="radio" name="gender" value="male"> Male<br>
-             <input type="radio" name="gender" value="female"> Female<br>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="input-field col s12 m4 offset-m2">
-			<label for="Type">Type</label>
-			<input type="text" name="Type" Type="Type" required>
-		</div>
-		<div class="input-field col s12 m4">
-			<label for="LeavesLeft">LeavesLeft</label>
-			<input type="number" min="0" name="LeavesLeft" id="LeavesLeft" required>
+			<select class="browser-default" name="UserType" id="UserType" required>
+				<option value="" disabled selected>Select User Type</option>
+				<?php
+				require_once 'classDatabaseUserType.php';
+				$objDatabaseUserType=new DatabaseUserType;
+				$objUserTypeArray=$objDatabaseUserType->getUserTypes();
+				foreach ($objUserTypeArray as $objUserType) {
+					echo '<option value="'.$objUserType->getType().'">'.$objUserType->getType().'</option>';
+				}
+				?>
+			</select>
 		</div>
 	</div>
     <div class="row">
