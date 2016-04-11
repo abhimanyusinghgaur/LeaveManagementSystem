@@ -20,11 +20,17 @@ if(adminIsLoggedIn()) {
 	<link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	<style type="text/css">
 		.brand-logo {
-			height: 150px !important;
+			height: 115px !important;
 			padding-top: 25px !important;
-			padding-bottom: 25px !important;
+			padding-bottom: 5px !important;
 			line-height: 100px !important;
 			font-size: 100px !important;
+			
+		}
+		.full-form {
+			height: 40px !important;
+			line-height: 18px !important;
+			font-size: 15px !important;
 			border-bottom: 2px solid black;
 		}
 		@media only screen and (min-width:993px) {
@@ -45,6 +51,7 @@ if(adminIsLoggedIn()) {
 	<header>
 		<ul class="side-nav fixed red lighten-2" id="mobile-menu">
 			<a href="#!" class="brand-logo center">LMS</a>
+			<a href="../index.php" class="full-form center">Leave Management System</a>
 			<?php
 			if(userIsLoggedIn()) {
 			?>
