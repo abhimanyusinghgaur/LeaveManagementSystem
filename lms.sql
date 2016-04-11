@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2016 at 02:20 PM
+-- Generation Time: Apr 11, 2016 at 08:03 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `admins` (
   `id` int(11) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(32) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `username` varchar(30) COLLATE latin1_general_cs NOT NULL,
+  `password` varchar(32) COLLATE latin1_general_cs NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 --
 -- Dumping data for table `admins`
@@ -47,13 +47,13 @@ INSERT INTO `admins` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE IF NOT EXISTS `leaverequests` (
   `id` int(11) NOT NULL,
-  `Username` varchar(30) NOT NULL,
-  `LeaveType` varchar(50) NOT NULL,
+  `Username` varchar(30) COLLATE latin1_general_cs NOT NULL,
+  `LeaveType` varchar(50) COLLATE latin1_general_cs NOT NULL,
   `StartDate` date NOT NULL,
   `EndDate` date NOT NULL,
-  `Reason` varchar(500) NOT NULL,
-  `Status` enum('Granted','Rejected','Pending','') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Reason` varchar(500) COLLATE latin1_general_cs NOT NULL,
+  `Status` enum('Granted','Rejected','Pending','') COLLATE latin1_general_cs NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 -- --------------------------------------------------------
 
@@ -63,11 +63,11 @@ CREATE TABLE IF NOT EXISTS `leaverequests` (
 
 CREATE TABLE IF NOT EXISTS `leavetypes` (
   `id` int(11) NOT NULL,
-  `leaveName` varchar(30) NOT NULL,
-  `abbreviation` varchar(5) NOT NULL,
+  `leaveName` varchar(30) COLLATE latin1_general_cs NOT NULL,
+  `abbreviation` varchar(5) COLLATE latin1_general_cs NOT NULL,
   `numLeaves` smallint(6) NOT NULL,
-  `inclusions` set('Mon','Tue','Wed','Thu','Fri','Sat','Sun','Holidays') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `inclusions` set('Mon','Tue','Wed','Thu','Fri','Sat','Sun','Holidays') COLLATE latin1_general_cs NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 -- --------------------------------------------------------
 
@@ -77,14 +77,14 @@ CREATE TABLE IF NOT EXISTS `leavetypes` (
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
-  `Name` varchar(40) NOT NULL,
-  `Username` varchar(30) NOT NULL,
-  `Email` varchar(30) NOT NULL,
-  `Password` varchar(30) NOT NULL,
-  `Gender` enum('male','female') NOT NULL,
-  `Type` varchar(30) NOT NULL,
-  `Leaves_Left` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Name` varchar(40) COLLATE latin1_general_cs NOT NULL,
+  `Username` varchar(30) COLLATE latin1_general_cs NOT NULL,
+  `Email` varchar(30) COLLATE latin1_general_cs NOT NULL,
+  `Password` varchar(30) COLLATE latin1_general_cs NOT NULL,
+  `Gender` enum('male','female') COLLATE latin1_general_cs NOT NULL,
+  `Type` varchar(30) COLLATE latin1_general_cs NOT NULL,
+  `Leaves_Left` varchar(50) COLLATE latin1_general_cs NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 -- --------------------------------------------------------
 
@@ -94,9 +94,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 CREATE TABLE IF NOT EXISTS `usertypes` (
   `id` int(11) NOT NULL,
-  `type` varchar(100) NOT NULL,
-  `accessibleLeaves` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `type` varchar(100) COLLATE latin1_general_cs NOT NULL,
+  `accessibleLeaves` varchar(500) COLLATE latin1_general_cs NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 --
 -- Indexes for dumped tables
