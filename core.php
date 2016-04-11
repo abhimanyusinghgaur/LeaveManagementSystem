@@ -11,9 +11,10 @@ function connectDatabase() {
 	$mysql_user = 'root';
 	$mysql_pass	= '';
 	$mysql_db = 'lms';
+	$new_link = true;
 
-	$connect=mysql_connect($mysql_host, $mysql_user, $mysql_pass);
-	if (!$connect or !mysql_select_db($mysql_db)) {
+	$connect=mysql_connect($mysql_host, $mysql_user, $mysql_pass, $new_link);
+	if (!$connect or !mysql_select_db($mysql_db, $connect)) {
 		die($conn_error);
 	}
 	return $connect;
