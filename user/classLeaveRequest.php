@@ -94,8 +94,9 @@ class LeaveRequest
 	{
 		require_once '../admin/classDatabaseLeaveType.php';
 		if(strtotime($this->EndDate)-strtotime($this->StartDate) >= 0) {
-			$leavesRequired = intval(date_diff(new DateTime($this->StartDate), new DateTime($this->EndDate))->days);
-			if($leavesRequired>=0) {
+			$leavesRequired = date_diff(new DateTime($this->StartDate), new DateTime($this->EndDate));
+			if($leavesRequired !== false) {
+				$leavesRequired = intval($leavesRequired->days);
 				$leavesRequired += 1;	//if StartDate == EndDate => date_diff()=0 but leavesRequired=1
 				$leavesPerDay = array_fill(0, 7, intval($leavesRequired/7));
 				$modulo = $leavesRequired%7;
