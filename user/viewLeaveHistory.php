@@ -7,6 +7,7 @@
 		      <th>Start Date</th>
 		      <th>End Date</th>
 		      <th>Status</th>
+		      <th>Delete/Cancel</th>
 		  </tr>
 		</thead>
 
@@ -28,6 +29,7 @@
 							'<td>'.$objLeaveRequest->getStartDate().'</td>'.
 							'<td>'.$objLeaveRequest->getEndDate().'</td>'.
 							'<td>'.$objLeaveRequest->getStatus().'</td>'.
+							'<td><a href="deleteLeaveRequest.php?id='.$objLeaveRequest->getid().'"><i class="material-icons del">delete</i></a></td>'.
 						'</tr>'.
 					'<tr class="reason">'.
 						'<td colspan="4"><div><b>Reason:</b><br>'.$objLeaveRequest->getReason().'</div><td>'.
