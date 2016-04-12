@@ -72,7 +72,13 @@ if(userIsLoggedIn()) {
 				<?php
 				if(adminIsLoggedIn()) {
 				?>
-				<div class="col s5 l6">Statistics</div>
+				<div class="col s5 l6"><span class="teal lighten-5 z-depth-1 teal-text" style="padding:5px;">
+				<?php
+					require_once '../user/classDatabaseLeaveRequest.php';
+					$objDatabaseLeaveRequest = new DatabaseLeaveRequest;
+					echo $objDatabaseLeaveRequest->countPending().' new';
+				?>
+				</span></div>
 				<div class="col s4">Welcome <a href="?id=profile" class="white-text"><?php echo getUsername(); ?></a></div>
 				<div class="col s2 right-align"><a href="../logout.php" class="white-text">Logout</a></div>
 				<?php

@@ -71,7 +71,21 @@ if(adminIsLoggedIn()) {
 				<?php
 				if(userIsLoggedIn()) {
 				?>
-				<div class="col s5 l6">Statistics</div>
+				<div class="col s5 l6">
+				<?php
+					require_once 'classDatabaseUser.php';
+					require_once '../admin/classDatabaseLeaveType.php';
+					$objDatabaseUser = new DatabaseUser;
+					$objDatabaseLeaveType = new DatabaseLeaveType;
+					$leavesLeft = $objDatabaseUser->getUsersWithUsername(getUsername())[0]->getLeavesLeft();
+					$leavesLeft = explode(',', $leavesLeft);
+					foreach ($leavesLeft as $value) {
+						$value = explode(':', $value);
+						$value[0] = $objDatabaseLeaveType->getLeaveTypeWithLeaveName($value[0])->getAbbreviation();
+						echo '<span class="teal lighten-5 z-depth-1 teal-text" style="padding:5px;margin-right:5px;">'.$value[0].':'.$value[1].'</span>';
+					}
+				?>
+				</div>
 				<div class="col s4">Welcome <a href="?id=profile" class="white-text"><?php echo getUsername(); ?></a></div>
 				<div class="col s2 right-align"><a href="../logout.php" class="white-text">Logout</a></div>
 				<?php

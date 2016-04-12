@@ -107,6 +107,21 @@ class DatabaseLeaveRequest
 		mysql_close($connect);
 		return false;
 	}
+
+	public function countPending() {
+		require_once '../core.php';
+		$connect = connectDatabase();
+		$query = "SELECT COUNT(*) FROM `leaverequests` WHERE `Status`='Pending'";
+		if($query_run = mysql_query($query)) {
+			$row=mysql_fetch_row($query_run);
+			mysql_close($connect);
+			return $row[0];
+		} else {
+			setError(mysql_error());
+		}
+		mysql_close($connect);
+		return false;
+	}
 }
 
 ?>
