@@ -40,3 +40,10 @@
 		</tbody>
 	</table>
 </div>
+
+<style type="text/css">
+	.del:hover {
+		color: red;
+	}
+
+</style>
