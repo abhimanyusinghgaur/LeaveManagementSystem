@@ -122,6 +122,21 @@ class DatabaseLeaveRequest
 		mysql_close($connect);
 		return false;
 	}
+	public function delLeaveWithUser($user) {
+		require_once '../core.php';
+		$connect=connectDatabase();
+	
+		 	$query="DELETE FROM $this->table WHERE Username = '$user'";
+				if($query_run=mysql_query($query)) {
+					mysql_close($connect);
+					return true;
+				} else {
+					setError(mysql_error());
+				}
+
+		mysql_close($connect);
+		return false;
+	}
 }
 
 ?>

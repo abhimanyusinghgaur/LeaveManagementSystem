@@ -80,6 +80,22 @@ class DatabaseUserType
 		mysql_close($connect);
 		return false;
 	}
+	public function del($objUserType) {
+		require_once '../core.php';
+		$connect=connectDatabase();
+	
+				$query="DELETE FROM $this->table WHERE type = '$objUserType'";
+				if($query_run=mysql_query($query)) {
+					mysql_close($connect);
+					return true;
+				} else {
+					setError(mysql_error());
+				}
+				
+		
+		mysql_close($connect);
+		return false;
+	}
 }
 
 ?>

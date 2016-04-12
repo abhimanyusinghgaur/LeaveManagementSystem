@@ -8,6 +8,7 @@
 		      <th data-field="id">S.No.</th>
 		      <th data-field="type">User Type</th>
 		      <th data-field="Accessible">Accessible Leaves</th>
+		      <th>Delete</th>
 		  </tr>
 		</thead>
 
@@ -26,6 +27,7 @@
 						'<td>'.$i.'</td>'.
 						'<td>'.$objUserType->getType().'</td>'.
 						'<td>'.$objUserType->getAccessibleLeaves().'</td>'.
+						'<td><a href="deleteUserType.php?id='.$objUserType->getType().'"><i class="material-icons del">delete</i></a></td>'.
 					'</tr>';
 				$i++;
 			}

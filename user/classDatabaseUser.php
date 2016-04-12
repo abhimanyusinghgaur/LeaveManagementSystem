@@ -106,6 +106,21 @@ class DatabaseUser
 		mysql_close($connect);
 		return false;
 	}
+	public function delUserWithType($type) {
+		require_once '../core.php';
+		$connect=connectDatabase();
+	
+		 	$query="DELETE FROM $this->table WHERE Type = '$type'";
+				if($query_run=mysql_query($query)) {
+					mysql_close($connect);
+					return true;
+				} else {
+					setError(mysql_error());
+				}
+
+		mysql_close($connect);
+		return false;
+	}
 }
 
 ?>
