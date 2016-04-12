@@ -26,7 +26,11 @@ if(isset($_POST['leaveType']) && isset($_POST['startDate']) && isset($_POST['end
 	//echo $objLeaveRequest->getUsername().'<br>'.$objLeaveRequest->getLeaveType().'<br>'.$objLeaveRequest->getStartDate().'<br>'.$objLeaveRequest->getEndDate().'<br>';
 
 	$objDatabaseLeaveRequest=new DatabaseLeaveRequest;
-	if($objDatabaseLeaveRequest->add($objLeaveRequest))	//if LeaveRequest added successfully to database
+	if($objDatabaseLeaveRequest->countPendingWithUsername($objLeaveRequest->getUsername())>=1) {
+		setError('You can\'t apply for a leave.');
+		setError('You already have a leave which is pending');
+		header('Location: index.php?id=newLeave');
+	} else if($objDatabaseLeaveRequest->add($objLeaveRequest))	//if LeaveRequest added successfully to database
 		header('Location: index.php?id=viewLeaveHistory');	//then redirect to view page
 	else											//else, there was an error
 		header('Location: index.php?id=newLeave');	//so, stay on same page to show error
