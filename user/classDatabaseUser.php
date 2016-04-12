@@ -88,6 +88,13 @@ class DatabaseUser
 			return $this->getUsers();
 		}
 	}
+	public function getUsersWithType($Type) {
+		if(!empty($Type) && is_string($Type)) {
+			$this->queryParameters="WHERE `type`='".$Type."'";
+			return $this->getUsers();
+		}
+	}
+
 
 	public function modifyLeavesLeft($Username, $LeavesLeft) {
 		require_once '../core.php';
