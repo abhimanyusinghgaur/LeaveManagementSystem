@@ -39,7 +39,7 @@
 
 	<div class="row">
 		<div class="input-field col s12 m8 offset-m2">
-			<textarea name="reason" id="reason" class="materialize-textarea" required></textarea>
+			<textarea name="reason" id="reason" class="materialize-textarea" length="300" minlength="3" maxlength="300" class="validate" required></textarea>
 			<label for="reason">Why are you taking a leave?</label>
 		</div>
 	</div>

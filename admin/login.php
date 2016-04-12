@@ -13,7 +13,7 @@
 	</div>
     <div class="row">
     	<div class="col s12 m4 l4 offset-m4 offset-l4">
-			<button type="submit" class="col s12 orange waves-effect waves-light btn">Submit<i class="material-icons">send</i></button>	    		
+			<button type="submit" class="col s12 orange waves-effect waves-light btn">Login<i class="material-icons right">send</i></button>	    		
     	</div>
     </div>
 </form>

@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="input-field col s12 m8 offset-m2">
 			<label for="UserType">User Type</label>
-			<input type="text" name="UserType" id="UserType" required>
+			<input type="text" name="UserType" id="UserType" pattern="^[a-zA-Z][a-zA-Z ]*$" title="Only letters and spaces are allowed. First character must be a letter." class="validate" required>
 		</div>
 	</div>
 	<div class="row">

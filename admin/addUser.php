@@ -2,17 +2,17 @@
 	<div class="row">
 		<div class="input-field col s12 m8 offset-m2">
 			<label for="Name">Name</label>
-			<input type="text" name="Name" id="Name" required>
+			<input type="text" name="Name" id="Name" pattern="^[a-zA-Z][a-zA-Z ]*$" title="Only letters and spaces are allowed. First character must be a letter." class="validate" required>
 		</div>
 	</div>
 	<div class="row">
 		<div class="input-field col s12 m4 offset-m2">
 			<label for="Username">Username</label>
-			<input type="text" name="Username" id="Username" required>
+			<input type="text" name="Username" id="Username" pattern="^[a-zA-Z0-9]*$" title="Only letters and numbers are allowed." class="validate" required>
 		</div>
 		<div class="input-field col s12 m4">
 			<label for="Email">Email</label>
-			<input type="email" name="Email" id="Email" required>
+			<input type="email" name="Email" id="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please check the format: characters@characters.domain" class="validate" required>
 		</div>
 	</div>
 

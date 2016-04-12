@@ -33,7 +33,7 @@
 						'<td><a href="reject.php?id='.$objLeaveRequest->getid().'"><i class="material-icons reject">delete</i></a></td>'.
 					'</tr>'.
 					'<tr class="reason">'.
-						'<td colspan="7"><div><b>Reason:</b><br>'.$objLeaveRequest->getReason().'</div><td>'.
+						'<td colspan="6"><div><b>Reason:</b><br>'.$objLeaveRequest->getReason().'</div><td>'.
 					'</tr>';
 				$i++;
 			}

@@ -2,17 +2,17 @@
 	<div class="row">
 		<div class="input-field col s12 m8 offset-m2">
 			<label for="leaveName">Leave Name</label>
-			<input type="text" name="leaveName" id="leaveName" required>
+			<input type="text" name="leaveName" id="leaveName" pattern="^[a-zA-Z][a-zA-Z ]*$" title="Only letters and spaces are allowed. First character must be a letter." class="validate" required>
 		</div>
 	</div>
 	<div class="row">
 		<div class="input-field col s12 m4 offset-m2">
 			<label for="abbreviation">Abbreviation</label>
-			<input type="text" name="abbreviation" id="abbreviation" required>
+			<input type="text" name="abbreviation" id="abbreviation" pattern="^[a-zA-Z]*$" title="Only letters are allowed." class="validate" required>
 		</div>
 		<div class="input-field col s12 m4">
 			<label for="numLeaves">Number of Leaves</label>
-			<input type="number" name="numLeaves" id="numLeaves" min="1" max="365" required>
+			<input type="number" name="numLeaves" id="numLeaves" min="1" max="365" class="validate" required>
 		</div>
 	</div>
 	<div class="row">

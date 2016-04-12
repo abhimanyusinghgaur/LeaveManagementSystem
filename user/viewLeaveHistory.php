@@ -30,7 +30,7 @@
 							'<td>'.$objLeaveRequest->getStatus().'</td>'.
 						'</tr>'.
 					'<tr class="reason">'.
-						'<td colspan="5"><div><b>Reason:</b><br>'.$objLeaveRequest->getReason().'</div><td>'.
+						'<td colspan="4"><div><b>Reason:</b><br>'.$objLeaveRequest->getReason().'</div><td>'.
 					'</tr>';
 					$i++;
 				}

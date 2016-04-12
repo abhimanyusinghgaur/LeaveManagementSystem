@@ -6,6 +6,11 @@ if(adminIsLoggedIn()) {
 	header('Location: ../admin/');
 }
 
+$pageId = "viewLeaveHistory";
+if(isset($_GET['id']) && !empty($_GET['id'])) {
+	$pageId = $_GET['id'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,14 +55,14 @@ if(adminIsLoggedIn()) {
 
 	<header>
 		<ul class="side-nav fixed red lighten-2" id="mobile-menu">
-			<a href="#!" class="brand-logo center">LMS</a>
-			<a href="../index.php" class="full-form center">Leave Management System</a>
+			<a href="index.php" class="brand-logo center">LMS</a>
+			<a href="index.php" class="full-form center">Leave Management System</a>
 			<?php
 			if(userIsLoggedIn()) {
 			?>
-				<li><a href="?id=profile">Profile</a></li>
-				<li><a href="?id=newLeave">New Leave</a></li>
-				<li><a href="?id=viewLeaveHistory">Leave History</a></li>
+				<li class="<?php if($pageId=="profile") echo "active"; ?>"><a href="?id=profile">Profile</a></li>
+				<li class="<?php if($pageId=="newLeave") echo "active"; ?>"><a href="?id=newLeave">New Leave</a></li>
+				<li class="<?php if($pageId=="viewLeaveHistory") echo "active"; ?>"><a href="?id=viewLeaveHistory">Leave History</a></li>
 			<?php
 			}
 			?>
@@ -91,7 +96,7 @@ if(adminIsLoggedIn()) {
 				<?php
 				} else {
 				?>
-				<div class="col s11 l12 center white-text">Login</div>
+				<div class="col s11 l12 center white-text">User Login</div>
 				<?php
 				}
 				?>
@@ -102,13 +107,13 @@ if(adminIsLoggedIn()) {
 			<?php
 			if(userIsLoggedIn()) {
 				if(!isset($_GET['id']))
-					include 'newLeave.php';
+					include 'viewLeaveHistory.php';
 				/*else if($_GET['id']=='profile')
 					include 'profile.php';*/
-				else if($_GET['id']=='viewLeaveHistory')
-					include 'viewLeaveHistory.php';
-				else
+				else if($_GET['id']=='newLeave')
 					include 'newLeave.php';
+				else
+					include 'viewLeaveHistory.php';
 			} else {
 				include 'login.php';
 			}

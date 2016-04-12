@@ -6,11 +6,11 @@
 	<table class="highlight bordered responsive-table hoverable">
 		<thead>
 		  <tr>
-		      <th data-field="id">S.No.</th>
-		      <th data-field="name">Leave Name</th>
-		      <th data-field="abbr">Abbreviation</th>
-		      <th data-field="price">Number of Leaves</th>
-		      <th data-field="incl">Inclusions</th>
+		      <th>S.No.</th>
+		      <th>Leave Name</th>
+		      <th>Abbreviation</th>
+		      <th>Number of Leaves</th>
+		      <th>Inclusions</th>
 		  </tr>
 		</thead>
 

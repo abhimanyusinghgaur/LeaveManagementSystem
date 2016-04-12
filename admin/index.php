@@ -6,6 +6,11 @@ if(userIsLoggedIn()) {
 	header('Location: ../user/');
 }
 
+$pageId = "viewLeaveRequests";
+if(isset($_GET['id']) && !empty($_GET['id'])) {
+	$pageId = $_GET['id'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,15 +55,15 @@ if(userIsLoggedIn()) {
 
 	<header>
 		<ul class="side-nav fixed red lighten-2" id="mobile-menu">
-			<a href="#!" class="brand-logo center">LMS</a>
-			<a href="../index.php" class="full-form center">Leave Management System</a>
+			<a href="index.php" class="brand-logo center">LMS</a>
+			<a href="index.php" class="full-form center">Leave Management System</a>
 			<?php
 			if(adminIsLoggedIn()) {
 			?>
-				<li><a href="?id=viewLeaveRequests">Leave Requests</a></li>
-				<li><a href="?id=viewUserType">User Types</a></li>
-				<li><a href="?id=viewLeaveType">Leave Types</a></li>
-				<li><a href="?id=viewUser">Users</a></li>
+				<li class="<?php if($pageId=="viewLeaveRequests") echo "active"; ?>"><a href="?id=viewLeaveRequests">Leave Requests</a></li>
+				<li class="<?php if($pageId=="viewLeaveType") echo "active"; ?>"><a href="?id=viewLeaveType">Leave Types</a></li>
+				<li class="<?php if($pageId=="viewUserType") echo "active"; ?>"><a href="?id=viewUserType">User Types</a></li>
+				<li class="<?php if($pageId=="viewUser") echo "active"; ?>"><a href="?id=viewUser">Users</a></li>
 			<?php
 			}
 			?>
@@ -84,7 +89,7 @@ if(userIsLoggedIn()) {
 				<?php
 				} else {
 				?>
-				<div class="col s11 l12 center white-text">Login</div>
+				<div class="col s11 l12 center white-text">Admin Login</div>
 				<?php
 				}
 				?>
